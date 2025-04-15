@@ -1,0 +1,16 @@
+def euclidean_distance(point1, point2):
+    """
+    Calculate the Euclidean distance between two points in n-dimensional space
+    
+    Parameters:
+    point1 (iterable): First point's coordinates
+    point2 (iterable): Second point's coordinates
+    
+    Returns:
+    float: The Euclidean distance between the points
+    """
+    if len(point1) != len(point2):
+        raise ValueError("Points must have the same number of dimensions")
+    
+    squared_distance = sum((p1 - p2) ** 2 for p1, p2 in zip(point1, point2))
+    return squared_distance ** 0.5
